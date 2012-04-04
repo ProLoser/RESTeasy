@@ -3,12 +3,11 @@
  * @route /auth/resteasy
  */
 
-/*
 var resteasyModule = require('../lib/resteasy')
   , express = require('express')
   , app = express.createServer();
 
-var resteasy = new resteasyModule('./providers/linkedin', { }, 'http://localhost:8000/auth/resteasy/callback');
+var resteasy = new resteasyModule('./providers/linkedin', { login : '63nm998t88y8', pass : 'H2kdiM0muQ3KNX0G' }, 'http://localhost:8000/auth/resteasy/callback');
 
 app.configure(function() {
   app.use(express.bodyParser());
@@ -20,21 +19,23 @@ app.configure(function() {
 });
 
 app.get('/auth/resteasy', function(request, response) {
-  resteasy.checkConnectedOrConnect(request, response);
+  resteasy.connect(request, response);
 });
 
 app.get('/auth/resteasy/callback', function(request, response) {
   resteasy.retrieveAndSaveAccessTokens(request, function(error, access_token, access_token_secret) {
     if (error) {
-      request.flash('error', error);
+      throw new Error(error);
     } else {
-      request.flash('info', 'resteasy is now connected and saved to your account!');
+      console.log('connected to linkedin');
+      console.log('access_token:', access_token);
+      console.log('access_token_secret:', access_token_secret);
+      response.redirect('/resteasy/me');
     };
-    response.redirect('/' + request.session.user.Username + '/');
   });
 });
 
-app.get('/resteasy/build', function(request, response) {
+app.get('/resteasy/me', function(request, response) {
   var params = {
     token: {
       oauth_token_secret: request.session.user.resteasy_access_token_secret,
@@ -51,10 +52,6 @@ app.get('/resteasy/build', function(request, response) {
   });
 });
 
-app.listen(8000);*/
-
-var github = require('../lib/providers/github');
-
-console.log(github);
+app.listen(8000);
 
 /* EOF */
