@@ -1,31 +1,36 @@
 {
-  "name": "resteasy",
-  "description": "add support for any api using a simple object literal",
-  "version": "0.0.1",
-  "author": {
-    "name": "Dean Sofer"
+  "name":"resteasy",
+  "author":"Dean Sofer <deansofer@gmail.com>",
+  "contributors":[
+    { "name": "Edward Hotchkiss", "email": "edwardhotchkiss@me.com" }
+  ],
+  "homepage": "http://github.com/wereplaceyou/resteasy",
+  "description":"Node.JS Easy 3rd party OAuth & REST API Consumer",
+  "version":"0.0.1",
+  "repository":{
+    "type":"git",
+    "url":"git://github.com/wereplaceyou/resteasy.git"
   },
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/wereplaceyou/resteasy.js.git"
+  "keywords":["rest","oauth","consumer","api"],
+  "main":"./lib/resteasy",
+  "engines":{
+    "node":">= 0.6.0 < 0.7.0"
   },
-  "engines": {
-    "node": ">=0.1.90"
+  "dependencies":{
+    "oauth":"0.9.6"
   },
-  "main": "resteasy",
-  "_id": "resteasy@0.0.1",
-  "dependencies": {
-	"oauth": "",
-	"url": "",
-	"http": "",
-	"path": "",
-	"querystring"
+  "devDependencies":{
+    "vows":"0.6.2",
+    "express":"2.5.9"
   },
-  "devDependencies": {},
-  "optionalDependencies": {},
-  "_engineSupported": true,
-  "_npmVersion": "1.1.4",
-  "_nodeVersion": "v0.6.12",
-  "_defaultsLoaded": true,
-  "_from": "resteasy@0.0.1-1"
+  "bugs":{
+    "url":"https://github.com/wereplaceyou/resteasy/issues"
+  },
+  "licenses":[{
+    "type":"MIT",
+    "url":"http://github.com/wereplaceyou/resteasy/LICENSE"
+  }],
+  "scripts":{
+    "test":"vows test/*.test.js --spec"
+  }
 }
