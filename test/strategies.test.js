@@ -23,13 +23,12 @@ app.get('/auth/resteasy', function(request, response) {
 });
 
 app.get('/auth/resteasy/callback', function(request, response) {
-  resteasy.retrieveAndSaveAccessTokens(request, function(error, access_token, access_token_secret) {
+  resteasy.retrieveAccessTokens(request, function(error, access_token, access_token_secret) {
     if (error) {
       throw new Error(error);
     } else {
-      console.log('connected to linkedin');
-      console.log('access_token:', access_token);
-      console.log('access_token_secret:', access_token_secret);
+      request.session.access_token = access_token;
+      request.session.access_token_secret = access_token_secret;
       response.redirect('/resteasy/me');
     };
   });
@@ -38,8 +37,8 @@ app.get('/auth/resteasy/callback', function(request, response) {
 app.get('/resteasy/me', function(request, response) {
   var params = {
     token: {
-      oauth_token_secret: request.session.user.resteasy_access_token_secret,
-      oauth_token: request.session.user.resteasy_access_token
+      oauth_token_secret: request.session.access_token_secret,
+      oauth_token: request.session.resteasy_access_token
     }
   };
   resteasy.request('GET', '/people/~', params, function(error, data, _response) {
