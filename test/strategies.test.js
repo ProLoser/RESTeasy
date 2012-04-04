@@ -3,6 +3,7 @@
  * @route /auth/resteasy
  */
 
+/*
 var resteasyModule = require('../lib/resteasy')
   , express = require('express')
   , app = express.createServer();
@@ -50,6 +51,10 @@ app.get('/resteasy/build', function(request, response) {
   });
 });
 
-app.listen(8000);
+app.listen(8000);*/
+
+var github = require('../lib/providers/github');
+
+console.log(github);
 
 /* EOF */
