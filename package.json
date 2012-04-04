@@ -1,0 +1,31 @@
+{
+  "name": "resteasy",
+  "description": "add support for any api using a simple object literal",
+  "version": "0.0.1",
+  "author": {
+    "name": "Dean Sofer"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ProLoser/resteasy.js.git"
+  },
+  "engines": {
+    "node": ">=0.1.90"
+  },
+  "main": "resteasy",
+  "_id": "resteasy@0.0.1",
+  "dependencies": {
+	"oauth": "",
+	"url": "",
+	"http": "",
+	"path": "",
+	"querystring"
+  },
+  "devDependencies": {},
+  "optionalDependencies": {},
+  "_engineSupported": true,
+  "_npmVersion": "1.1.4",
+  "_nodeVersion": "v0.6.12",
+  "_defaultsLoaded": true,
+  "_from": "resteasy@0.0.1-1"
+}
