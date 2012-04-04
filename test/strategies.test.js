@@ -7,7 +7,7 @@ var resteasyModule = require('../lib/resteasy')
   , express = require('express')
   , app = express.createServer();
 
-var resteasy = new resteasyModule('./providers/linkedin', { login : '63nm998t88y8', pass : 'H2kdiM0muQ3KNX0G' }, 'http://localhost:8000/auth/resteasy/callback');
+var resteasy = new resteasyModule('./providers/github', { login : '2e9a894eadea867036d6', pass : '64e867859748cf3fc43c1c444f2aa97a3c8d5b6b' }, 'http://localhost:8000/auth/resteasy/callback');
 
 app.configure(function() {
   app.use(express.bodyParser());
