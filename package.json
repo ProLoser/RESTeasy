@@ -7,7 +7,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/ProLoser/resteasy.js.git"
+    "url": "git://github.com/wereplaceyou/resteasy.js.git"
   },
   "engines": {
     "node": ">=0.1.90"
