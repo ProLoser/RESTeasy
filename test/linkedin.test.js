@@ -35,13 +35,7 @@ app.get('/auth/resteasy/callback', function(request, response) {
 });
 
 app.get('/resteasy/me', function(request, response) {
-  var params = {
-    token: {
-      oauth_token_secret: request.session.access_token_secret,
-      oauth_token: request.session.resteasy_access_token
-    }
-  };
-  resteasy.request('GET', '/people/~', params, function(error, data, _response) {
+  resteasy.read('people', {}, function(error, data, _response) {
     if (error) {
       console.error(error);
       return;
