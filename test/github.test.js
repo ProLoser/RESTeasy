@@ -11,12 +11,12 @@ app.configure(function() {
   app.use(express.bodyParser());
   app.use(express.cookieParser());
   app.use(express.session({
-    secret : 'SECRET!:P',
+    secret : 'SECRET',
     maxAge : new Date(Date.now() + 86400000),
   }));
 });
 
-var resteasy = new resteasyModule('./providers/github', { login : '63nm998t88y8', pass : 'H2kdiM0muQ3KNX0G' }, 'http://localhost:8000/auth/resteasy/callback');
+var resteasy = new resteasyModule('./providers/github', { login : '2e9a894eadea867036d6', pass : '64e867859748cf3fc43c1c444f2aa97a3c8d5b6b' }, 'http://localhost:8000/auth/resteasy/callback');
 
 app.get('/auth/resteasy', function(request, response) {
   resteasy.connect(request, response);
@@ -27,16 +27,15 @@ app.get('/auth/resteasy/callback', function(request, response) {
     if (error) {
       throw new Error(error);
     } else {
-      response.redirect('/resteasy/me');
+      response.redirect('/resteasy/followers');
     };
   });
 });
 
-app.get('/resteasy/me', function(request, response) {
-  resteasy.read(request, 'people', {}, function(error, data, _response) {
+app.get('/resteasy/followers', function(request, response) {
+  resteasy.read(request, 'followers', {}, function(error, data) {
     if (error) {
-      console.error(error);
-      return;
+      response.send(error);
     } else {
       response.send(data);
     }

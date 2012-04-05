@@ -11,7 +11,7 @@ app.configure(function() {
   app.use(express.bodyParser());
   app.use(express.cookieParser());
   app.use(express.session({
-    secret : 'SECRET!:P',
+    secret : 'SECRET',
     maxAge : new Date(Date.now() + 86400000),
   }));
 });
@@ -35,8 +35,7 @@ app.get('/auth/resteasy/callback', function(request, response) {
 app.get('/resteasy/me', function(request, response) {
   resteasy.read(request, 'people', { id: '12345'}, function(error, data, _response) {
     if (error) {
-      console.error(error);
-      return;
+      response.send(error);
     } else {
       response.send(data);
     }
