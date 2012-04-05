@@ -16,7 +16,7 @@ app.configure(function() {
   }));
 });
 
-var resteasy = new resteasyModule('./providers/linkedin', { login : '63nm998t88y8', pass : 'H2kdiM0muQ3KNX0G' }, 'http://localhost:8000/auth/resteasy/callback');
+var resteasy = new resteasyModule('./providers/github', { login : '63nm998t88y8', pass : 'H2kdiM0muQ3KNX0G' }, 'http://localhost:8000/auth/resteasy/callback');
 
 app.get('/auth/resteasy', function(request, response) {
   resteasy.connect(request, response);
@@ -33,7 +33,7 @@ app.get('/auth/resteasy/callback', function(request, response) {
 });
 
 app.get('/resteasy/me', function(request, response) {
-  resteasy.read(request, 'people', { id: '12345'}, function(error, data, _response) {
+  resteasy.read(request, 'people', {}, function(error, data, _response) {
     if (error) {
       console.error(error);
       return;
