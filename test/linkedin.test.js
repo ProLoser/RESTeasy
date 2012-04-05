@@ -41,7 +41,7 @@ app.get('/resteasy/me', function(request, response) {
       oauth_token: request.session.resteasy_access_token
     }
   };
-  resteasy.request('GET', '/people/~', params, function(error, data, _response) {
+  resteasy.read('people', {}, function(error, data) {
     if (error) {
       console.error(error);
       return;
