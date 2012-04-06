@@ -16,24 +16,30 @@ app.configure(function() {
   }));
 });
 
-var resteasy = new resteasyModule('./providers/github', { login : '2e9a894eadea867036d6', pass : '64e867859748cf3fc43c1c444f2aa97a3c8d5b6b' }, 'http://localhost:8000/auth/resteasy/callback');
+var resteasy = new resteasyModule('./providers/github', { login : '728139c3a2d13a537cd9', pass : '6d29f8b32792dc0151f068acd52267b705fb437c' }, 'http://localhost:8000/auth/resteasy/callback');
 
 app.get('/auth/resteasy', function(request, response) {
   resteasy.connect(request, response);
 });
 
 app.get('/auth/resteasy/callback', function(request, response) {
-  resteasy.callback(request, function(error, keys) {
+  resteasy.callback(request, function(error, github_oauth_access, github_oauth_access_secret) {
     if (error) {
       throw new Error(error);
     } else {
-      response.redirect('/resteasy/followers');
+      request.session.github_oauth_access = github_oauth_access;
+      request.session.github_oauth_access_secret = github_oauth_access_secret;
+      response.redirect('/resteasy/my');
     };
   });
 });
 
-app.get('/resteasy/followers', function(request, response) {
-  resteasy.read(request, 'followers', {}, function(error, data) {
+app.get('/resteasy/my', function(request, response) {
+  var tokens = {
+    oauth_token : request.session.github_oauth_access,
+    oauth_token_secret : request.session.github_oauth_access_secret 
+  };
+  resteasy.read(tokens, 'repos', {}, function(error, data) {
     if (error) {
       response.send(error);
     } else {
