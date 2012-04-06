@@ -33,7 +33,7 @@ app.get('/auth/resteasy/callback', function(request, response) {
 });
 
 app.get('/resteasy/me', function(request, response) {
-  resteasy.read(request, 'people', { id: '12345'}, function(error, data, _response) {
+  resteasy.read(request, 'people', { url: 'http://www.linkedin.com/in/deansofer'}, function(error, data, _response) {
     if (error) {
       response.send(error);
     } else {
