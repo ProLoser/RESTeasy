@@ -23,17 +23,23 @@ app.get('/auth/resteasy', function(request, response) {
 });
 
 app.get('/auth/resteasy/callback', function(request, response) {
-  resteasy.callback(request, function(error, keys) {
+  resteasy.callback(request, function(error, linkedin_oauth_access, linkedin_oauth_access_secret) {
     if (error) {
       throw new Error(error);
     } else {
+      request.session.linkedin_oauth_access = linkedin_oauth_access;
+      request.session.linkedin_oauth_access_secret = linkedin_oauth_access_secret;
       response.redirect('/resteasy/me');
     };
   });
 });
 
 app.get('/resteasy/me', function(request, response) {
-  resteasy.read(request, 'people', { id: '12345'}, function(error, data, _response) {
+  var tokens = {
+    oauth_token : request.session.linkedin_oauth_access,
+    oauth_token_secret : request.session.linkedin_oauth_access_secret 
+  };
+  resteasy.read(tokens, 'people', {}, function(error, data) {
     if (error) {
       response.send(error);
     } else {
