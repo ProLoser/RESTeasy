@@ -48,6 +48,24 @@ app.get('/resteasy/me', function(request, response) {
   });
 });
 
+app.get('/resteasy/me/fields', function(request, response) {
+  var tokens = {
+    oauth_token : request.session.linkedin_oauth_access,
+    oauth_token_secret : request.session.linkedin_oauth_access_secret 
+  };
+  resteasy.read(tokens, 'people', { 'fields' : {
+    'first-name':true, 'last-name':true,
+    'positions': ['title', 'summary', 'start-date', 'end-date', 'is-current', 'company'],
+    'skills': ['skill', 'proficiency', 'years']
+  } }, function(error, data) {
+    if (error) {
+      response.send(error);
+    } else {
+      response.send(data);
+    }
+  });
+});
+
 app.get('/resteasy/url', function(request, response) {
   var tokens = {
     oauth_token : request.session.linkedin_oauth_access,
