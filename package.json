@@ -1,5 +1,6 @@
 {
   "name":"resteasy",
+  "private":true,
   "author":"Dean Sofer <deansofer@gmail.com>",
   "contributors":[
     { "name": "Edward Hotchkiss", "email": "edwardhotchkiss@me.com" }
