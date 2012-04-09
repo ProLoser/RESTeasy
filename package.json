@@ -1,8 +1,9 @@
 {
   "name":"resteasy",
   "private":true,
-  "author":"Dean Sofer <deansofer@gmail.com>",
+  "author":"unfolio <hello@unfol.io>",
   "contributors":[
+    { "name": "Dean Sofer", "email": "deansofer@gmail.com" },
     { "name": "Edward Hotchkiss", "email": "edwardhotchkiss@me.com" }
   ],
   "homepage": "http://github.com/wereplaceyou/resteasy",
@@ -12,7 +13,7 @@
     "type":"git",
     "url":"git://github.com/wereplaceyou/resteasy.git"
   },
-  "keywords":["rest","oauth","consumer","api"],
+  "keywords":["rest","easy","oauth","consumer","api"],
   "main":"./lib/resteasy",
   "engines":{
     "node":">= 0.6.0 < 0.7.0"

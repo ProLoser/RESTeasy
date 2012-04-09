@@ -16,7 +16,7 @@ app.configure(function() {
   }));
 });
 
-var resteasy = new resteasyModule('./providers/linkedin', { login : '63nm998t88y8', pass : 'H2kdiM0muQ3KNX0G' }, 'http://localhost:8000/auth/resteasy/callback');
+var resteasy = new resteasyModule('./providers/linkedin', { login : process.env.LINKED_IN_APP_ID, pass : process.env.LINKED_IN_APP_SECRET }, 'http://localhost:8000/auth/resteasy/callback');
 
 app.get('/auth/resteasy', function(request, response) {
   resteasy.connect(request, response);
@@ -53,11 +53,12 @@ app.get('/resteasy/me/fields', function(request, response) {
     oauth_token : request.session.linkedin_oauth_access,
     oauth_token_secret : request.session.linkedin_oauth_access_secret 
   };
-  resteasy.read(tokens, 'people', { 'fields' : {
-    'first-name':true, 'last-name':true,
-    'positions': ['title', 'summary', 'start-date', 'end-date', 'is-current', 'company'],
-    'skills': ['skill', 'proficiency', 'years']
-  } }, function(error, data) {
+  resteasy.read(tokens, 'people', 
+    { 'fields' : {
+      'first-name':true, 'last-name':true,
+      'positions': ['title', 'summary', 'start-date', 'end-date', 'is-current', 'company'],
+      'skills': ['skill', 'proficiency', 'years']
+    } }, function(error, data) {
     if (error) {
       response.send(error);
     } else {

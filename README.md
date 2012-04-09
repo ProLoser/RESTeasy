@@ -1,6 +1,7 @@
-# RESTeasy
 
-Make consuming RESTful apis __waaaaay__ easier
+# resteasy
+
+> REST(easy), Make consuming RESTful apis __waaaaay__ easier
 
 ## Installation
 
