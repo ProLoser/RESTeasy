@@ -20,18 +20,11 @@
   "dependencies":{
     "oauth":"0.9.6"
   },
-  "devDependencies":{
-    "vows":"0.6.2",
-    "express":"2.5.9"
-  },
   "bugs":{
     "url":"https://github.com/unfolio/resteasy/issues"
   },
   "licenses":[{
     "type":"MIT",
     "url":"http://github.com/unfolio/resteasy/LICENSE"
-  }],
-  "scripts":{
-    "test":"vows test/*.test.js --spec"
-  }
+  }]
 }
