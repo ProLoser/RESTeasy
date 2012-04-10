@@ -1,17 +1,16 @@
 {
   "name":"resteasy",
-  "private":true,
   "author":"unfolio <hello@unfol.io>",
   "contributors":[
     { "name": "Dean Sofer", "email": "deansofer@gmail.com" },
     { "name": "Edward Hotchkiss", "email": "edwardhotchkiss@me.com" }
   ],
-  "homepage": "http://github.com/wereplaceyou/resteasy",
+  "homepage": "http://github.com/unfolio/resteasy",
   "description":"Node.JS Easy 3rd party OAuth & REST API Consumer",
   "version":"0.0.1",
   "repository":{
     "type":"git",
-    "url":"git://github.com/wereplaceyou/resteasy.git"
+    "url":"git://github.com/unfolio/resteasy.git"
   },
   "keywords":["rest","easy","oauth","consumer","api"],
   "main":"./lib/resteasy",
@@ -26,11 +25,11 @@
     "express":"2.5.9"
   },
   "bugs":{
-    "url":"https://github.com/wereplaceyou/resteasy/issues"
+    "url":"https://github.com/unfolio/resteasy/issues"
   },
   "licenses":[{
     "type":"MIT",
-    "url":"http://github.com/wereplaceyou/resteasy/LICENSE"
+    "url":"http://github.com/unfolio/resteasy/LICENSE"
   }],
   "scripts":{
     "test":"vows test/*.test.js --spec"
