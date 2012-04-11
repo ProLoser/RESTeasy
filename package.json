@@ -10,7 +10,7 @@
   "version":"0.0.1",
   "repository":{
     "type":"git",
-    "url":"git://github.com/unfolio/resteasy.git"
+    "url":"git://github.com/unfolio/RESTeasy.git"
   },
   "keywords":["rest","easy","oauth","consumer","api"],
   "main":"./lib/resteasy",
@@ -21,10 +21,10 @@
     "oauth":"0.9.6"
   },
   "bugs":{
-    "url":"https://github.com/unfolio/resteasy/issues"
+    "url":"https://github.com/unfolio/RESTeasy/issues"
   },
   "licenses":[{
     "type":"MIT",
-    "url":"http://github.com/unfolio/resteasy/LICENSE"
+    "url":"http://github.com/unfolio/RESTeasy/LICENSE"
   }]
 }
