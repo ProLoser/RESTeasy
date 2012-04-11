@@ -9,7 +9,7 @@ So with _so much_ repetition from one API to another, I built a way to 'map' API
 
 ### Step 0: Require (obviously)
 
-```
+```javascript
 var resteasy = require('resteasy');
 ```
 
@@ -18,7 +18,7 @@ var resteasy = require('resteasy');
 * __First param__ is the name of the provider OR a path to your own provider file.
 * __Second param__ is an object containing a `login` key (appId) and a `pass` key (appSecret). You can optionally pass the `oauth_token` and `oauth_token_secret` if you stored it and want to reuse the session
 
-```
+```javascript
 // Instantiate an instance with config values
 var github = resteasy('github', keys);
 ```
@@ -33,7 +33,7 @@ github.connect(callbackUrl);
 
 ...redirects user to API for authentication which then forwards to callbackUrl...
 
-```
+```javascript
 github.callback(function(error, oauth_token, oauth_token_secret, additionalParameters){
   // Store auth credentials
 });
@@ -44,7 +44,7 @@ github.callback(function(error, oauth_token, oauth_token_secret, additionalParam
 You can either use the general-purpose `github.request()` function to build your own queries if you are too lazy to 
 supplement a provider, but the preferred method is as follows:
 
-```
+```javascript
 var tokens = {
   oauth_token: [your stored token],
   oauth_token_secret: [your stored token secret]
@@ -61,7 +61,7 @@ All it takes to add your own provider is a hashmap containing the specific API's
 
 Use this template and check out the other providers for examples:
 
-```
+```javascript
 module.exports = {
   // Contains base urls
   hosts : {
