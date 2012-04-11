@@ -115,5 +115,9 @@ module.exports = {
   prepQuery : function(query) {
     return query;
   },
+  // An optional callback function to be executed just before redirecting to connect for auth. Passes a redirectUrl for OAuth v1.0 and a params object for OAuth v2.0
+  prepConnect : function([redirectUrl | params], keys, scope) {
+    return [redirectUrl | params];
+  },
 }
 ```
