@@ -1,4 +1,3 @@
-
 # resteasy
 
 > REST(easy), Make consuming RESTful apis __waaaaay__ easier
@@ -32,7 +31,7 @@ github.connect(callbackUrl);
 ...redirects user to API for authentication which then forwards to callbackUrl...
 
 ```
-github.callback(function(error, tokens){
+github.callback(function(error, oauth_token, oauth_token_secret, additionalParameters){
   // Store auth credentials
 });
 ```
@@ -43,7 +42,11 @@ You can either use the general-purpose `github.request()` function to build your
 supplement a provider, but the preferred method is as follows:
 
 ```
-github.read('repos', { user: 'ProLoser' },  callback);
+var tokens = {
+  oauth_token: [your stored token],
+  oauth_token_secret: [your stored token secret]
+};
+github.read(tokens, 'repos', { user: 'ProLoser' },  callback);
 ```
 
 The syntax is identical for `.create()`, `.update()`, and `.del()`. The provider map will be searched until a path with all
