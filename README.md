@@ -1,4 +1,5 @@
 # RESTeasy
+> Make consuming RESTful apis **waaaaay** easier in Node.js
 
 Ever notice how all of these APIs seem to have a high degree of consistency? They're just a bunch of URLs that accept different parameters you pass to it. So the thing is what's the point of creating a lib for each and every API and endpoint, making each url call involve a different class or method name? This means that in addition to learning the API you have to learn the lib API too. And what happens if the API updates? You're stuck waiting for the lib to incorporate the changes before you can actually leverage the new features.
 
