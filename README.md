@@ -13,7 +13,7 @@ So with _so much_ repetition from one API to another, I built a way to 'map' API
 var resteasy = require('resteasy');
 ```
 
-### Step 1: Instiante
+### Step 1: Instantiate
 
 * __First param__ is the name of the provider OR a path to your own provider file.
 * __Second param__ is an object containing a `login` key (appId) and a `pass` key (appSecret). You can optionally pass the `oauth_token` and `oauth_token_secret` if you stored it and want to reuse the session
