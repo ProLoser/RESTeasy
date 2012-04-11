@@ -53,11 +53,13 @@ github.read(tokens, 'repos', { user: 'ProLoser' },  callback);
 ```
 
 The syntax is identical for `.create()`, `.update()`, and `.del()`. The provider map will be searched until a path with all
-of the REQUIRED params are matched is found. It will then proceed to use that endpoint
+of the REQUIRED params are matched is found. It will then proceed to use that endpoint.
 
 ## Expanding Functionality
 
 All it takes to add your own provider is a hashmap containing the specific API's endpoints in an organized manner.
+
+To refer to your provider, just pass the path as the first argument (`github` above) as if you were passing it directly to `require`.
 
 Use this template and check out the other providers for examples:
 
