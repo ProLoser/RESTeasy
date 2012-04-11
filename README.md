@@ -1,6 +1,8 @@
-# resteasy
+# RESTeasy
 
-> REST(easy), Make consuming RESTful apis __waaaaay__ easier
+Ever notice how all of these APIs seem to have a high degree of consistency? They're just a bunch of URLs that accept different parameters you pass to it. So the thing is what's the point of creating a lib for each and every API and endpoint, making each url call involve a different class or method name? This means that in addition to learning the API you have to learn the lib API too. And what happens if the API updates? You're stuck waiting for the lib to incorporate the changes before you can actually leverage the new features.
+
+So with _so much_ repetition from one API to another, I built a way to 'map' APIs. This means that updating and adding new APIs is ridiculously easy, and the only documentation you need to refer to is the native APIs, and even _that_ is kept to a minimum. All methods calls are extremely simple and consistent. Just specify the CRUD action, the resource name and pass the parameters you have available to you. The mapper will figure out what url it needs to use to get the job done, leaving you to make much more versatile code without knowing every nuance of every API.
 
 ## Installation
 
