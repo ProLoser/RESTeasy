@@ -11,6 +11,10 @@ So with _so much_ repetition from one API to another, I built a way to 'map' API
 
 ### Step 0: Require (obviously)
 
+```bash
+$ npm install resteasy
+```
+
 ```javascript
 var resteasy = require('resteasy');
 ```
