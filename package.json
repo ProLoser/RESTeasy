@@ -7,7 +7,7 @@
   ],
   "homepage": "http://github.com/unfolio/resteasy",
   "description":"Node.JS Easy 3rd party OAuth & REST API Consumer",
-  "version":"0.0.4",
+  "version":"0.0.5",
   "repository":{
     "type":"git",
     "url":"git://github.com/unfolio/RESTeasy.git"
