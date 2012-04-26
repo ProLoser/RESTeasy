@@ -76,7 +76,7 @@ module.exports = {
     oauth : // Base URL used for all OAuth requests. Ex: 'https://github.com/login/oauth'
     rest : // Base URL used for all API requests. Ex: 'https://api.github.com'
   },
-  // OAuth Configuration and paths
+  // OAuth Configuration and paths. Usually appended to hosts.oauth url
   oauth : {
     version : // OAuth version. Ex: '1.0' or '2.0'
     authorize : // Path to 'authorize' endpoint. Ex: A URI of https://github.com/login/oauth/user/authorize would be just 'user/authorize'
@@ -91,23 +91,24 @@ module.exports = {
     repos : [
       // An array of endpoints going in order of SMALLER # of required params (or 0 / all optional) to the HIGHEST # of required params
       {
-        // Path to endpoint. Can include tokens from the params object
-        path : 'repos/:user/:repo',
+        // Path to endpoint. Can include colon-prefixed tokens that match keys in the params object. Appended to hosts.rest url
+        path : 'user/repos',
         // Optional array of REQUIRED params (some endpoints don't need any)
+        required : [],
+        // Optional array of OPTIONAL (whitelisted) params that are also added to the request and/or substituted as tokens
+        optional : [
+          'type' // all, owner, public, private, member. Default: all
+        ]
+      },
+      {
+        path : 'repos/:user/:repo',
         required : [
           'user',
           'repo'
         ]
-        // Optional array of OPTIONAL params that are added to the request and/or substituted as tokens
         optional : [
           'format',
           'sortBy'
-        ]
-      }, 
-      {
-        path : 'user/repos',
-        optional : [
-          'type' // all, owner, public, private, member. Default: all
         ]
       }
     ],
