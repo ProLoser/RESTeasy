@@ -26,6 +26,7 @@ var resteasy = require('resteasy');
 
 ```javascript
 // Instantiate an instance with config values
+var keys = { login: '[appId]', pass: '[appSecret]' };
 var github = resteasy('github', keys);
 ```
 
