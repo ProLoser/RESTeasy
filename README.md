@@ -29,7 +29,8 @@ var resteasy = require('resteasy');
 var keys = { login: '[appId]', pass: '[appSecret]' };
 //You must pass the full URL to where the callback is located
 var callbackUrl = 'url';
-var github = resteasy('resteasy/lib/providers/github', keys, callbackUrl); // resteasy('./providers/myprovider', ...); 
+// var provider = resteasy('./providers/myprovider', ...); 
+var github = resteasy('resteasy/lib/providers/github', keys, callbackUrl);  
 ```
 
 ### Step 2: Authenticate
