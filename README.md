@@ -63,9 +63,9 @@ The syntax is identical for `.create()`, `.update()`, and `.del()`. The provider
 of the REQUIRED params are matched is found. It will then proceed to use that endpoint.
 
 ## LinkedIn Notes
-http://developer.linkedin.com/documents/profile-api
-You may need to pass fields, to get back the desired data.
-To do this create an object and pass true for every field type you want.
+http://developer.linkedin.com/documents/profile-api  
+You may need to pass fields, to get back the desired data.  
+To do this create an object and pass true for every field type you want.  
 
 ```javascript
 var setFields = {
