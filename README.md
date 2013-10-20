@@ -27,12 +27,12 @@ var resteasy = require('resteasy');
 ```javascript
 // Instantiate an instance with config values
 var keys = { login: '[appId]', pass: '[appSecret]' };
-var github = resteasy('resteasy/lib/providers/github', keys); // resteasy('./providers/myprovider', ...); 
+//You must pass the full URL to where the callback is located
+var callbackUrl = 'url';
+var github = resteasy('resteasy/lib/providers/github', keys, callbackUrl); // resteasy('./providers/myprovider', ...); 
 ```
 
 ### Step 2: Authenticate
-
-You must pass the full URL to where the callback is located
 
 ```
 github.connect(callbackUrl);
@@ -61,6 +61,19 @@ github.read(tokens, 'repos', { user: 'ProLoser' },  callback);
 
 The syntax is identical for `.create()`, `.update()`, and `.del()`. The provider map will be searched until a path with all
 of the REQUIRED params are matched is found. It will then proceed to use that endpoint.
+
+## LinkedIn Notes
+You may need to pass fields, to get back the desired data. see: http://developer.linkedin.com/documents/profile-api
+to do this create an object and pass true for every field type you want.
+
+```javascript
+var setFields = {
+	'first-name' : true,
+	'last-name' : true,
+	'positions' : true,
+	'educations' : true
+};
+```
 
 ## Expanding Functionality
 
