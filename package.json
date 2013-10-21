@@ -21,10 +21,10 @@
     "oauth":"0.9.6"
   },
   "bugs":{
-    "url":"https://github.com/unfolio/RESTeasy/issues"
+    "url":"https://github.com/ProLoser/RESTeasy/issues"
   },
   "licenses":[{
     "type":"MIT",
-    "url":"http://github.com/unfolio/RESTeasy/LICENSE"
+    "url":"http://github.com/ProLoser/RESTeasy/LICENSE"
   }]
 }
