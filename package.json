@@ -10,7 +10,7 @@
   "version":"0.0.9",
   "repository":{
     "type":"git",
-    "url":"git://github.com/unfolio/RESTeasy.git"
+    "url":"git://github.com/ProLoser/RESTeasy.git"
   },
   "keywords":["rest","easy","oauth","consumer","api"],
   "main":"./lib/resteasy",
