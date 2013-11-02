@@ -1,11 +1,11 @@
 {
   "name":"resteasy",
-  "author":"unfolio <hello@unfol.io>",
+  "author":"ProLoser <proloser@hotmail.com>",
   "contributors":[
     { "name": "Dean Sofer", "email": "deansofer@gmail.com" },
     { "name": "Edward Hotchkiss", "email": "edwardhotchkiss@me.com" }
   ],
-  "homepage": "http://github.com/unfolio/resteasy",
+  "homepage": "http://github.com/ProLoser/RESTeasy",
   "description":"Node.JS Easy 3rd party OAuth & REST API Consumer",
   "version":"0.0.9",
   "repository":{
