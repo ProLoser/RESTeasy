@@ -58,7 +58,9 @@ var tokens = {
   oauth_token: [your stored token],
   oauth_token_secret: [your stored token secret]
 };
-github.read(tokens, 'repos', { user: 'ProLoser' },  callback);
+github.read(tokens, 'repos', { user: 'ProLoser' },  function(err, data, res){
+  // `data` contains API response
+});
 ```
 
 The syntax is identical for `.create()`, `.update()`, and `.del()`. The provider map will be searched until a path with all
