@@ -36,7 +36,7 @@ var github = resteasy('resteasy/lib/providers/github', keys, callbackUrl);
 ### Step 2: Authenticate
 
 ```
-github.connect(callbackUrl);
+github.connect();
 ```
 
 ...redirects user to API for authentication which then forwards to callbackUrl...
