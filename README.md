@@ -42,7 +42,8 @@ github.connect();
 ...redirects user to API for authentication which then forwards to callbackUrl...
 
 ```javascript
-github.callback(function(error, oauth_token, oauth_token_secret, additionalParameters){
+// Needs the node.js req object
+github.callback(req, function(error, oauth_token, oauth_token_secret, additionalParameters){
   // Store auth credentials
 });
 ```
