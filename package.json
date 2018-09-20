@@ -1,14 +1,12 @@
 {
   "name": "resteasy",
-  "author": "ProLoser <proloser@hotmail.com>",
+  "author": "ProLoser",
   "contributors": [
     {
-      "name": "Dean Sofer",
-      "email": "deansofer@gmail.com"
+      "name": "Dean Sofer"
     },
     {
-      "name": "Edward Hotchkiss",
-      "email": "edwardhotchkiss@me.com"
+      "name": "Edward Hotchkiss"
     }
   ],
   "homepage": "http://github.com/ProLoser/RESTeasy",
